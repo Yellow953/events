@@ -2,5 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :myevents
   
-  root "myevents#index"
+  get "/events", to: "myevents#index"
+  root "application#index"
 end
