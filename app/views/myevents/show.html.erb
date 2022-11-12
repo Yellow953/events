@@ -1,8 +1,20 @@
-<%= render @myevent %>
+<%= render @myevent %><br>
+
+<% if @myevent.users.any? %>
+  <div>
+    <b>This event's users:</b><br>
+    <% @myevent.users.each do |user| %>
+      <%= user.email %><br>
+      <%= user.created_at %><br>
+    <% end %>
+  </div>
+<% end %>
 
 <div><br>
-  <%= link_to "Edit this myevent", edit_myevent_path(@myevent), class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-5" %> |
-  <%= link_to "Back to myevents", myevents_path, class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-5" %>
+  <%= link_to "Attend this event", attend_myevent_path(id: @myevent.id), class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-5" %><br><br>
 
-  <%= button_to "Destroy this myevent", @myevent, method: :delete, class:"bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full m-5" %>
+  <%= link_to "Edit this event", edit_myevent_path(@myevent), class:"bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full m-5" %> |
+  <%= link_to "Back to events", myevents_path, class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-5" %>
+
+  <%= button_to "Destroy this event", @myevent, method: :delete, class:"bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full m-5" %>
 </div>

@@ -1,4 +1,5 @@
 class MyeventsController < ApplicationController
+  before_action :authenticate_user!, only: %i[index show edit create update destroy attend]
   before_action :set_myevent, only: %i[ show edit update destroy ]
 
   def index
@@ -42,6 +43,13 @@ class MyeventsController < ApplicationController
     flash[:danger] = "Event was successfully destroyed." 
     redirect_to myevents_url
   end
+
+  def attend
+    @event = Myevent.find(params[:id])
+    current_user.events << @event
+    redirect_to myevents_url
+  end
+  
 
   private
     def set_myevent

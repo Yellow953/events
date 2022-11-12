@@ -1,4 +1,5 @@
 class Ticket < ApplicationRecord
-    belongs_to :event, class_name: "Myevent"
-    belongs_to :attendee, class_name: "User"
+    belongs_to :event, class_name: "Myevent", foreign_key: "myevent_id"
+    belongs_to :user, class_name: "User", foreign_key: "user_id"
+
 end
