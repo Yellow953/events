@@ -2,10 +2,10 @@
 
 <div id="myevents">
   <% @myevents.each do |myevent| %>
-    <%= render myevent %>
-    
-    <br>
-    <%= link_to "Show this event", myevent, class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-8" %>
+    <div class="flex">
+      <%= render myevent %>
+      <%= link_to "Show this event", myevent, class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-8" %>
+    </div>
   <% end %>
 </div>
 <br>

@@ -1,7 +1,9 @@
 <div class="container p-20 text-center">
     <% if user_signed_in? %>
         <div class="text-yellow-500">Welcome <%= current_user.email %> to Rails App</div>
-        Go to <%= link_to "Events", myevents_path %> page
+        Go to <%= link_to "Events", myevents_path %> page <br>
+        or <br>
+        Go to <%= link_to "Categories", categories_path %> page <br>
     <% else %>
         Welcome to Rails App <br>
         Please Sign in to explore the full app <br>

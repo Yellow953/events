@@ -1,0 +1,8 @@
+<% @events.each do |event| %>
+    <div class="flex">
+        <%= render event %>
+        <div>
+            <%= link_to "Make this event for this category", make_this_event_for_this_category_path(@category, event), class: "m-8 rounded-lg py-3 px-5 bg-blue-500 inline-block font-medium" %>
+        </div>
+    </div>
+<% end %>

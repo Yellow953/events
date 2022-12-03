@@ -49,7 +49,6 @@ class MyeventsController < ApplicationController
     current_user.events << @event
     redirect_to myevents_url
   end
-  
 
   private
     def set_myevent
