@@ -18,7 +18,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 # gem "sassc-rails"
 # gem "image_processing", "~> 1.2"
-
+gem "tailwindcss-rails", "~> 2.0"
 gem "devise"
 
 group :development, :test do
@@ -31,10 +31,8 @@ group :development do
   # gem "spring"
 end
 
-group :test do
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'webdrivers'
 end
-
-gem "tailwindcss-rails", "~> 2.0"
